@@ -8,11 +8,13 @@ Agregar la dentro del metodo .then() la logica necesaria para imprimir el valor 
 **************************
 */
 
-const myPromise = Promise.resolve(50)
+const myPromise = Promise.resolve(50);
 
 myPromise.then(function(value) {
   // logica aqui
-})
+  myPromise = value;
+  console.log(value);
+});
 
 /*
 **************************
@@ -26,11 +28,13 @@ Agregar dentro del Callback 'funcion1' la logica necesaria sumarle al valor 'val
 
 const addValue = function(value) {
   // logica aqui.
-}
+  value = value + 10;
+  console.log(value);
+};
 
-const anotherPromise = Promise.resolve()
+let anotherPromise = Promise.resolve(10);
 
-anotherPromise.then(addValue)
+anotherPromise.then(addValue);
 
 /* 
 **************************
@@ -42,8 +46,13 @@ Crear una promesa que resuelva con el string 'foo'
 **************************
 */
 
-// logica aqui
+const addValueFoo = function(value) {
+  console.log(value);
+}; // logica aqui
 
+let myPromiseFoo = Promise.resolve("foo");
+
+myPromiseFoo.then(addValueFoo);
 /* 
 **************************
 **************************
@@ -53,5 +62,9 @@ A la promesa anterior agregar un metodo .then() para concatenar al string su pro
 **************************
 **************************
 */
+//tu logica aqui
+let myPromiseFooConcat = Promise.resolve("foo");
 
-// logica a aqui
+myPromiseFooConcat.then(function(value) {
+  console.log(value);
+});
