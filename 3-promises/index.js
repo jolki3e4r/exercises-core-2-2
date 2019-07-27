@@ -8,7 +8,7 @@ Agregar la dentro del metodo .then() la logica necesaria para imprimir el valor 
 **************************
 */
 
-const myPromise = Promise.resolve(50);
+let myPromise = Promise.resolve(50);
 
 myPromise.then(function(value) {
   // logica aqui
@@ -46,7 +46,7 @@ Crear una promesa que resuelva con el string 'foo'
 **************************
 */
 
-const addValueFoo = function(value) {
+let addValueFoo = function(value) {
   console.log(value);
 }; // logica aqui
 
